@@ -1,0 +1,32 @@
+__ Final Project Notes __
+- Best ways/workflow to get cross-browser stability?
+- What about mouse events for mobile platforms?
+
+
+__Hub__
+- Table with picture links to pick up.
+- One click brings an image center, a second activates the link.
+  - Randomized float down?
+  - Shadows with WebGL or CSS?
+
+_One_
+- Tracking Grid of 'screens'
+  - Sourced from where?
+- Click to turn off.
+  - Timer to turn back on?
+
+__Two__
+- Mountain top skybox, but when user 'bumps' into a wall, it falls over.
+  - Can I manipulate a skybox this way???
+- Empty studio as a larger skybox.
+- Able to turn off lights?
+  - Light shining from behind doorway out?
+
+___Three___
+- Javascript/p5 to systematically glitch and degrade a nice image.
+- The user must click on the sections to restore them or let the image break down.
+
+
+
+- Active states on mobile to replace hover functions
+- Double check Safari on Mac before submit.

@@ -1,0 +1,45 @@
+/* Main CSS for "Here We Are" final project directory */
+
+#container {
+  width: 80%;
+  padding: 10%;
+  height: 100%;
+  position: relative;
+}
+
+body {
+  background-image: url("../images/wood.jpg");
+  background-position: bottom right;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  z-index: -2;
+}
+
+#tile1 {
+  width: 600px;
+  height: 400px;
+  border: 3px solid black;
+  position: absolute;
+  transform: translateY(50px) rotateZ(-30deg);
+}
+
+#tile2 {
+  width: 600px;
+  height: 400px;
+  border: 3px solid black;
+  position: absolute;
+  transform: translateX(350px) translateY(120px) rotateZ(40deg);
+}
+
+#tile3 {
+  width: 600px;
+  height: 400px;
+  border: 3px solid black;
+  position: absolute;
+  transform: translateX(200px) translateY(350px) rotateZ(10deg);
+}
+
+.tile:active {
+
+}
