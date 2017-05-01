@@ -1,8 +1,9 @@
 /* Main CSS for "Here We Are" final project directory */
 
 #container {
-  width: 100vw;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 95vw;
   position: relative;
 }
 
@@ -12,33 +13,49 @@ body {
   background-attachment: fixed;
   background-size: cover;
   margin: 0;
+  padding: 0;
   z-index: -2;
 }
 
-#tile1 {
-  width: 600px;
-  height: 400px;
-  border: 3px solid black;
+.tile {
+  width: 550px;
+  height: 375px;
+  border: 1px outset black;
+  transition: transform 400ms ease-in 0.12s;
   position: absolute;
-  transform: translate(100px, 150px) rotateZ(-30deg);
+}
+
+.tile:focus {
+  outline: none;
+  box-shadow: 25px 37px 50px 10px #000000;
+}
+
+#tile1 {
+  background-color: white;
+  transform: translate(80px, 120px) rotateZ(-20deg);
+  z-index: 1;
+}
+
+#tile1:focus {
+  transform: translate(220px, 200px) rotateZ(-5deg);
 }
 
 #tile2 {
-  width: 600px;
-  height: 400px;
-  border: 3px solid black;
-  position: absolute;
-  transform: translate(450px, 170px) rotateZ(40deg);
+  background-color: lightgrey;
+  transform: translate(550px, 170px) rotateZ(30deg);
+  z-index: 2;
+}
+
+#tile2:focus {
+  transform: translate(350px, 220px) rotateZ(10deg);
 }
 
 #tile3 {
-  width: 600px;
-  height: 400px;
-  border: 3px solid black;
-  position: absolute;
-  transform: translate(250px, 400px) rotateZ(10deg);
+  background-color: grey;
+  transform: translate(250px, 500px) rotateZ(10deg);
+  z-index: 0;
 }
 
-.tile:active {
-
+#tile3:focus {
+  transform: translate(250px, 300px) rotateZ(-7deg);
 }
