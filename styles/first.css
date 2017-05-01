@@ -1,0 +1,12 @@
+/* Main CSS for "Here We Are" final project directory */
+
+#container {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* This will clip errant scroll bars */
+}
