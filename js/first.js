@@ -1,7 +1,10 @@
 // Javascript for the Final Project first page
+// Developed from the lookAt THREE.js example here:
+// https://threejs.org/examples/#misc_lookat
+// Made with icons off Freepik from www.flaticon.com
 
 var camera, scene, renderer;
-var mesh, screens, pointer;
+var mesh, material, screens, pointer;
 var mouseX = 0, mouseY = 0;
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
@@ -20,18 +23,19 @@ function init() {
 	scene.add(pointer);
 
   // Create screen planes:
-	var screens = new THREE.PlaneGeometry(300, 300, 4, 4);
-
-	var material = new THREE.MeshBasicMaterial({ THREE.TextureLoader('images/wood.jpg') });
-
-	for (var i = 0; i < 6; i++) {
-    for (var j = 0; j < 5; j++) {
-			var mesh = new THREE.Mesh(screens, material);
-			mesh.position.x = i * 400 - 1000;
-			mesh.position.y = j * 400 - 800;
-			scene.add(mesh);
+	var screens = new THREE.PlaneGeometry(350, 350, 4, 4);
+  var texLoader = new THREE.TextureLoader();
+  texLoader.load('images/icons/' + Math.floor(Math.random() * 29) + '.png', function(texture) {
+    material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
+	  for (var i = 0; i < 6; i++) {
+      for (var j = 0; j < 5; j++) {
+  			var mesh = new THREE.Mesh(screens, material);
+  			mesh.position.x = i * 400 - 1000;
+  			mesh.position.y = j * 400 - 800;
+  			scene.add(mesh);
+      }
     }
-	}
+  });
 
   // Create renderer:
 	renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -49,7 +53,7 @@ function animate() {
 function render() {
 	pointer.position.x = mouseX;
 	pointer.position.y = -mouseY;
-	pointer.position.z = 1500;
+	pointer.position.z = 1000;
 	for (var i = 1, l = scene.children.length; i < l; i++) {
 		scene.children[i].lookAt(pointer.position);
 	}
@@ -65,8 +69,8 @@ function onWindowResize() {
 }
 
 function onDocumentMouseMove(event) {
-	mouseX = (event.clientX - windowHalfX) * 1.5;
-	mouseY = (event.clientY - windowHalfY) * 1.5;
+	mouseX = (event.clientX - windowHalfX) * 2;
+	mouseY = (event.clientY - windowHalfY) * 2;
 }
 
 init();
