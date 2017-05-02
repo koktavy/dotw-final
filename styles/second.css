@@ -1,61 +1,13 @@
-/* Main CSS for "Here We Are" final project directory */
+/* Main CSS for "Are You Where You Are?" final project directory */
 
 #container {
   margin: 0;
   padding: 0;
-  width: 95vw;
   position: relative;
+  overflow: hidden;
 }
 
 body {
-  background-image: url("../images/wood.jpg");
-  background-position: bottom right;
-  background-attachment: fixed;
-  background-size: cover;
   margin: 0;
   padding: 0;
-  z-index: -2;
-}
-
-.tile {
-  width: 550px;
-  height: 375px;
-  border: 1px outset black;
-  transition: transform 400ms ease-in 0.12s;
-  position: absolute;
-}
-
-.tile:focus {
-  outline: none;
-  box-shadow: 25px 37px 50px 10px #000000;
-}
-
-#tile1 {
-  background-color: white;
-  transform: translate(80px, 120px) rotateZ(-20deg);
-  z-index: 1;
-}
-
-#tile1:focus {
-  transform: translate(220px, 200px) rotateZ(-5deg);
-}
-
-#tile2 {
-  background-color: lightgrey;
-  transform: translate(550px, 170px) rotateZ(30deg);
-  z-index: 2;
-}
-
-#tile2:focus {
-  transform: translate(350px, 220px) rotateZ(10deg);
-}
-
-#tile3 {
-  background-color: grey;
-  transform: translate(250px, 500px) rotateZ(10deg);
-  z-index: 0;
-}
-
-#tile3:focus {
-  transform: translate(250px, 300px) rotateZ(-7deg);
 }
