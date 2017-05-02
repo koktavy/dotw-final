@@ -42,7 +42,7 @@ body {
 }
 
 #tile1 {
-  background-color: white;
+  background-image: url("../images/wanted.jpg");
   transform: translate(80px, 120px) rotateZ(-20deg);
   z-index: 1;
 }
