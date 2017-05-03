@@ -3,11 +3,35 @@
 #container {
   margin: 0;
   padding: 0;
-  position: relative;
-  overflow: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+
+#blocker {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+  display: block;
+  margin: auto;
+  /*vertical-align: center;*/
+	cursor: pointer;
+  z-index: 2;
+}
+
+#text-holder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  margin: 0;
+  color: #cccccc;
+  font-size: 45px;
 }
