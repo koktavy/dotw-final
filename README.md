@@ -1,6 +1,8 @@
 # Drawing on the Web
 # Final Project Platform
 
+[Final project status as of May 2nd](http://i6.cims.nyu.edu/~tkk269/dotw/projects/final/)
+
 ## Concepts:
 
 1) A cubemap of a pleasant mountain top view. (Images here) When users move too far they “bump into” and “knock over” the walls and reveal something more akin to a movie set surrounding the area. The walls cannot be restored once the reality is known.

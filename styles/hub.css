@@ -32,7 +32,7 @@ body {
   width: 550px;
   height: 375px;
   border: 1px outset black;
-  transition: transform 400ms ease-in 0.12s;
+  transition: transform 400ms ease-in 0.08s;
   position: absolute;
 }
 
