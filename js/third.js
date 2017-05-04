@@ -1,51 +1,92 @@
 // Javascript for the Final Project Hub page
-
 var myCanvas = document.getElementById('glitch');
-var context = myCanvas.getContext('2d');
-var width = myCanvas.width;
-var height = myCanvas.height;
-var protestCanvas = document.getElementById('full-coverage');
-var internetCanvas = document.getElementById('internet');
-var realityCanvas = document.getElementById('reality');
-var container = document.getElementById('container');
+var width = window.innerWidth;
+var height = window.innerHeight;
+var protestCanvas, internetCanvas, realityCanvas;
+// var full = loadImage('images/full-coverage.png');
+// var net = loadImage('images/internet.png');
+// var real = loadImage('images/reality.png');
+var full, net, real;
+var count = 0;
 
-var full = new Image();
-full.src = 'images/full-coverage.png';
-var net = new Image();
-net.src = 'images/internet.png';
-var real = new Image();
-real.src = 'images/reality.png';
-
-function drawFull() {
-  context.drawImage(full, 0, 0); // Image, x, y
-  console.log('full');
-
+function setup() {
+  myCanvas = createCanvas(width, height);
+  // protestCanvas = createCanvas(width, height);
+  // protestCanvas.parent('#glitch');
+  // internetCanvas = createCanvas(width, height);
+  // internetCanvas.parent('#glitch');
+  // realityCanvas = createCanvas(width, height);
+  // realityCanvas.parent('#glitch');
+  full = loadImage('images/full-coverage.png');
+  net = loadImage('images/internet.png');
+  real = loadImage('images/reality.png');
 }
 
-function drawNet() {
-  context.drawImage(net, 0, 0); // Image, x, y
-    console.log('net');
+function draw() {
+  select();
+      push();
+      blendMode(OVERLAY);
+      image(full, 0, -100, full.width, full.height/1.2);
+      pop();
 
+      push();
+      blendMode(OVERLAY);
+      image(net, 100, -150, net.width, net.height/1.2);
+      pop();
+
+      push();
+      blendMode(OVERLAY);
+      image(real, 0, -200, real.width/2);
+      pop();
 }
 
-function drawReal() {
-  context.drawImage(real, 0, 0); // Image, x, y
-  console.log('real');
+function select() {
+  if (count > 1) {
+    push();
+    blendMode(OVERLAY);
+    image(full, 0, -100, full.width, full.height/1.2);
+    pop();
+
+    push();
+    blendMode(OVERLAY);
+    image(net, 100, -150, net.width, net.height/1.2);
+    pop();
+
+    push();
+    blendMode(OVERLAY);
+    image(real, 0, -200, real.width/2);
+    pop();
+  }
+  if (count > 2) {
+    push();
+    blendMode(HARD_LIGHT);
+    image(full, 0, -100, full.width, full.height/1.2);
+    pop();
+
+    push();
+    blendMode(HARD_LIGHT);
+    image(real, 0, -200, real.width/2);
+    pop();
+  }
+  if (count > 3) {
+    push();
+    blendMode(SOFT_LIGHT);
+    image(full, 0, -100, full.width, full.height/1.2);
+    pop();
+  }
+  if (count > 4) {
+    push();
+    image(full, 0, -100, full.width, full.height/1.2);
+    pop();
+  }
 }
 
-function drawAll() {
-  drawFull();
-  drawNet();
-  drawReal();
+function mouseClicked() {
+  count++;
 }
 
-window.addEventListener('load', drawAll);
-
-// tile1.addEventListener('click', function(){ tileClick(tile1) });
-// tile2.addEventListener('click', function(){ tileClick(tile2) });
-// tile3.addEventListener('click', function(){ tileClick(tile3) });
-
-// function tileClick(tile) {
-//   tile.style.zIndex = z;
-//   z++; // Always put the clicked tile on top.
-// }
+function windowResized() {
+  width = window.innerWidth;
+  height = window.innerHeight;
+  resizeCanvas(width, height);
+}

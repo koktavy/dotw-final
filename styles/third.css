@@ -3,7 +3,8 @@
 #container {
   margin: 0;
   padding: 0;
-  width: 95vw;
+  /*width: 95vw;*/
+  overflow: hidden;
   position: relative;
 }
 
@@ -44,10 +45,10 @@ body {
 
 #full-coverage {
 	position: absolute;
-	width: 500px;
+	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.5);
-  display: block;
+  /*display: block;*/
   margin: auto;
 	cursor: pointer;
 }
@@ -57,7 +58,7 @@ body {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.5);
-  display: block;
+  /*display: block;*/
   margin: auto;
 	cursor: pointer;
 }
@@ -67,7 +68,7 @@ body {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.5);
-  display: block;
+  /*display: block;*/
   margin: auto;
 	cursor: pointer;
 }
