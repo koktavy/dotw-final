@@ -6,6 +6,9 @@
 // Global variables:
 var camera, scene, renderer;
 var mesh, material, screens, pointer;
+var url = 'images/icons/';
+var type = '.png';
+var matArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28'];
 var mouseX = 0, mouseY = 0;
 var width = window.innerWidth;
 var height = window.innerHeight;
@@ -25,22 +28,38 @@ function init() {
 	pointer = new THREE.Mesh(new THREE.SphereGeometry(0.0001, 20, 20), new THREE.MeshNormalMaterial());
 	scene.add(pointer);
 
-  // Create screen planes:
-	var screens = new THREE.PlaneGeometry(350, 350, 4, 4);
-  var texLoader = new THREE.TextureLoader();
-  texLoader.load('images/icons/' + Math.floor(Math.random() * 29) + '.png', function(tex) {
-    material = new THREE.MeshBasicMaterial({ map: tex, transparent: true });
+  	// var screens = new THREE.PlaneGeometry(350, 350, 4, 4);
+    // var texLoader = new THREE.TextureLoader();
+    // texLoader.load('images/icons/' + Math.floor(Math.random() * 29) + '.png', function(tex) {
+    //   material = new THREE.MeshBasicMaterial({ map: tex, transparent: true });
 
+  // Create screen planes:
+
+  // load textures:
+    // for (var i = 0; i < 29; i++) {
+    //   texLoader.load('images/icons/' + i + '.png', function(tex) {
+    //     material = new THREE.MeshBasicMaterial({ map: tex, transparent: true });
+    //     matArray.push(material);
+    //     console.log(matArray);
+    //   });
+    // }
+
+
+    // console.log(matArray[1]);
     // Create the grid:
+    var texLoader = new THREE.TextureLoader();
+    screens = new THREE.PlaneGeometry(350, 350, 4, 4)
 	  for (var i = 0; i < 6; i++) {
       for (var j = 0; j < 5; j++) {
-  			var mesh = new THREE.Mesh(screens, material);
+        var randIndex = THREE.Math.randInt(0, 28);
+        var randTexture = texLoader.load(url + matArray[randIndex] + type);
+        material = new THREE.MeshBasicMaterial({ map: randTexture, transparent: true });
+        mesh = new THREE.Mesh(screens, material);
   			mesh.position.x = i * 400 - 1000;
   			mesh.position.y = j * 400 - 800;
   			scene.add(mesh);
       }
-    }
-  });
+    };
 
   // Create renderer:
 	renderer = new THREE.WebGLRenderer({ antialias: true });
