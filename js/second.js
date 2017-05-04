@@ -3,8 +3,6 @@
 // http://www.humus.name
 // SPECIAL thanks to xoryouyou on http://stackoverflow.com for pointing out JS object selectivity (object.geometry.type) with this fiddle: http://jsfiddle.net/z43hjqm9/1/ -- Definitely the biggest breakthrough for this project.
 
-//NOTE: Interesting Zoolander bug: limited left turn when F11 fullscreen.
-
 // Global variables:
 var camera, scene, raycaster, direction, renderer, controls;
 var skyboxGeometry, skyboxMaterial, skyboxMesh;
@@ -15,6 +13,7 @@ var height = window.innerHeight;
 var container = document.getElementById('container');
 var blocker = document.getElementById('blocker');
 var instructions = document.getElementById('instructions');
+var button = document.getElementById('button');
 var havePointerLock = 'pointerLockElement' in document;
 var running;
 
@@ -161,7 +160,6 @@ function onClick(event){
   }
   // Subsequent clicks check for, then drop the fakeWalls:
   else {
-    container.requestPointerLock();
     raycaster = new THREE.Raycaster();
     castRay();
     var intersects = raycaster.intersectObjects(scene.children);
@@ -169,6 +167,7 @@ function onClick(event){
       if (intersects[0].object.geometry.type === 'PlaneGeometry'){
         intersects[0].object.fall = true;
       }
+      container.requestPointerLock();
     }
   }
 }

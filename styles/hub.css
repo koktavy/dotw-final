@@ -1,12 +1,5 @@
 /* Main CSS for "Here We Are" final project directory */
 
-#container {
-  margin: 0;
-  padding: 0;
-  width: 95vw;
-  position: relative;
-}
-
 body {
   background-image: url("../images/wood.jpg");
   background-position: bottom right;
@@ -18,13 +11,35 @@ body {
   z-index: -2;
 }
 
-.icons-set {
+#container {
+  margin: 0;
+  padding: 0;
+  width: 95vw;
+  position: relative;
+}
+
+#button {
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	padding: 8px;
+	color: #fff;
+	background-color: #555;
+	opacity: 0.7;
+  z-index: 5;
+}
+
+#button:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+.icons {
   fill: none;
   width: 3em;
   height: 3em;
-  stroke: black;
+  stroke: white;
   stroke-width: 8;
-  stroke-linecap: round;
   stroke-miterlimit: 3;
 }
 
@@ -43,30 +58,30 @@ body {
 
 #tile1 {
   background-image: url("../images/wanted.jpg");
-  transform: translate(80px, 120px) rotateZ(-20deg);
+  transform: translate(280px, 120px) rotateZ(-20deg);
   z-index: 1;
 }
 
 #tile1:focus {
-  transform: translate(220px, 200px) rotateZ(-5deg);
+  transform: translate(420px, 200px) rotateZ(-5deg);
 }
 
 #tile2 {
-  background-color: lightgrey;
-  transform: translate(550px, 170px) rotateZ(30deg);
+  background-image: url("../images/where.jpg");
+  transform: translate(750px, 170px) rotateZ(30deg);
   z-index: 2;
 }
 
 #tile2:focus {
-  transform: translate(350px, 220px) rotateZ(10deg);
+  transform: translate(550px, 220px) rotateZ(10deg);
 }
 
 #tile3 {
-  background-color: grey;
-  transform: translate(250px, 500px) rotateZ(10deg);
+  background-image: url("../images/full-coverage.jpg");
+  transform: translate(450px, 500px) rotateZ(10deg);
   z-index: 0;
 }
 
 #tile3:focus {
-  transform: translate(250px, 300px) rotateZ(-7deg);
+  transform: translate(450px, 300px) rotateZ(-7deg);
 }

@@ -8,7 +8,7 @@
 }
 
 body {
-  background-image: url("../images/wood.jpg");
+  background-image: url("../images/glitch.jpg");
   background-position: bottom right;
   background-attachment: fixed;
   background-size: cover;
@@ -17,45 +17,57 @@ body {
   z-index: -2;
 }
 
-.tile {
-  width: 550px;
-  height: 375px;
-  border: 1px outset black;
-  transition: transform 400ms ease-in 0.12s;
-  position: absolute;
+#button {
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	padding: 8px;
+	color: #fff;
+	background-color: #555;
+	opacity: 0.7;
+  z-index: 5;
 }
 
-.tile:focus {
-  outline: none;
-  box-shadow: 25px 37px 50px 10px #000000;
+#button:hover {
+	cursor: pointer;
+	opacity: 1;
 }
 
-#tile1 {
-  background-color: white;
-  transform: translate(80px, 120px) rotateZ(-20deg);
-  z-index: 1;
+.icons {
+  fill: none;
+  width: 3em;
+  height: 3em;
+  stroke: white;
+  stroke-width: 8;
+  stroke-miterlimit: 3;
 }
 
-#tile1:focus {
-  transform: translate(220px, 200px) rotateZ(-5deg);
+#full-coverage {
+	position: absolute;
+	width: 500px;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+  display: block;
+  margin: auto;
+	cursor: pointer;
 }
 
-#tile2 {
-  background-color: lightgrey;
-  transform: translate(550px, 170px) rotateZ(30deg);
-  z-index: 2;
+#internet {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+  display: block;
+  margin: auto;
+	cursor: pointer;
 }
 
-#tile2:focus {
-  transform: translate(350px, 220px) rotateZ(10deg);
-}
-
-#tile3 {
-  background-color: grey;
-  transform: translate(250px, 500px) rotateZ(10deg);
-  z-index: 0;
-}
-
-#tile3:focus {
-  transform: translate(250px, 300px) rotateZ(-7deg);
+#reality {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+  display: block;
+  margin: auto;
+	cursor: pointer;
 }
